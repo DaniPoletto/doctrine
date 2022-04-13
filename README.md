@@ -25,3 +25,11 @@ Em seguida, rode o comando no terminal:
 ```
  composer dumpautoload
  ```
+ 
+ Caso necessário, rode também:
+ ```
+ composer require symfony/cache
+```
+ ```
+ composer require doctrine/annotations
+ ```
