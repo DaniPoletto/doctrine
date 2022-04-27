@@ -33,3 +33,16 @@ Em seguida, rode o comando no terminal:
  ```
  composer require doctrine/annotations
  ```
+ 
+ Mostrar os comandos disponiveis pelo doctrine:
+  ```
+ vendor\bin\doctrine.bat
+ ```
+ Mapear uma classe:
+  ```
+ vendor\bin\doctrine.bat orm:info
+ ```
+ Criar o esquema/sql:
+  ```
+ vendor\bin\doctrine.bat orm:schema-tool:create
+ ```
