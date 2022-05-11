@@ -70,5 +70,10 @@ Executa todas as migrations:
 vendor\bin\doctrine-migrations migrations:migrate
 ```
 
+### Relacionamento many to many
 
+Retornar informações de uma entidade mapeada
+```
+vendor\bin\doctrine orm:mapping:describe Curso
+```
 
