@@ -46,3 +46,29 @@ Em seguida, rode o comando no terminal:
   ```
  vendor\bin\doctrine.bat orm:schema-tool:create
  ```
+
+### Relacionamento One to Many
+
+Para instalar as migrations:
+
+```
+composer require doctrine/migrations
+```
+
+Para configurar as migrations:
+
+[configuração](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.3/reference/configuration.html#configuration)
+
+Gerar uma migration, comparando o seu banco de dados atual com as informações de mapeamento:
+
+```
+vendor\bin\doctrine-migrations migrations:diff
+```
+
+Executa todas as migrations:
+```
+vendor\bin\doctrine-migrations migrations:migrate
+```
+
+
+
