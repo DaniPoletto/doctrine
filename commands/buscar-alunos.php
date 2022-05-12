@@ -8,10 +8,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $entityManagerFactory = new EntityManagerFactory();
 $entityManager = $entityManagerFactory->getEntityManager();
 
-$alunoRepository = $entityManager->getRepository(Aluno::class);
-
-/** @var Aluno[] $alunoList */
-$alunoList = $alunoRepository->findAll();
+//DQL - Doctrine Query Language
+//Retorna todos os alunos
+$dql = 'SELECT aluno FROM Alura\\Doctrine\\Entity\\Aluno aluno WHERE aluno.id = 3 OR aluno.nome = \'Daniela\' ORDER BY aluno.nome';
+$query = $entityManager->createQuery($dql);
+$alunoList = $query->getResult();
 
 foreach ($alunoList as $aluno) {
     $telefones = $aluno
