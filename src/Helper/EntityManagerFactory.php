@@ -22,8 +22,11 @@ class EntityManagerFactory{
 
         //informações de conexão
         $connection = [
-            'driver' => 'pdo_sqlite',
-            'path' => $rootDir . '/var/data/banco.sqlite'
+            'driver' => 'pdo_mysql',
+            'host' => 'localhost',
+            'dbname' => 'curso_doctrine',
+            'user' => 'root',
+            'password' => ''  
         ];
 
         //cria um gerenciador de entidades
