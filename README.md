@@ -60,6 +60,46 @@ composer require doctrine/migrations
 
 Para configurar as migrations: [configuração](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.3/reference/configuration.html#configuration)
 
+Utilizando injeção de dependência é criado um gerenciador de entidade que irá fazer as operações necessárias no banco.
+
+A classe EntityManagerInterface necessita ser importada.
+```
+    /**
+     * @var EntityManagerInterface
+     */
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+```
+
+O método persist 'observa' a entidade que recebe como parametro até que seja utilizado o método flush para de fato persistir as alterações no banco. 
+
+As alterações são mapeadas em memória otimizando a performance da aplicação.
+
+```
+        $this->entityManager->persist($medico);
+        $this->entityManager->flush();
+```
+
+Usando anotações para definir informações das colunas da tabela a ser criada
+```
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+     public $id;
+```
+No código acima é informado que o atributo id é um campo do tipo identificador com valor gerado automaticamente e no formato inteiro.
+
+Para informar um formato texto (char, varchar, text) basta fazer da seguinte forma:
+```
+@ORM\Column(type="string")
+```
+
 Gerar uma migration, comparando o seu banco de dados atual com as informações de mapeamento:
 
 ```
