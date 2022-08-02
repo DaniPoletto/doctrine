@@ -116,3 +116,13 @@ Retornar informações de uma entidade mapeada
 vendor\bin\doctrine orm:mapping:describe Curso
 ```
 
+Retorna um repositório (de médicos)
+```
+$repositorioDeMedicos = $this->getDoctrine()->getRepository(Medico::class);
+```
+
+Retorna todos os médicos com esse repositório
+```
+$medicoList = $repositorioDeMedicos->findAll();
+```
+
