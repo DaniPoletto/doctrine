@@ -1,8 +1,8 @@
 <?php
 namespace Alura\Doctrine\Helper;
+use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Tools\Setup;
 
 //Classe para criar um gerenciador de entidades
 class EntityManagerFactory{
@@ -15,7 +15,7 @@ class EntityManagerFactory{
         $rootDir = __DIR__ . '/../..';
         //cria as configurações que o doctrine precisa através de anotações
         //busca apartir do directory src e com mode de desenvolvimento = true
-        $config = Setup::createAnnotationMetadataConfiguration(
+        $config = ORMSetup::createAttributeMetadataConfiguration(
             [$rootDir . '/src'],
             true
         );
