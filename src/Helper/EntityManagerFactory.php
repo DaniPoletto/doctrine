@@ -10,13 +10,12 @@ class EntityManagerFactory{
     /**
      * @return EntityManagerInterface
      */
-    public function getEntityManager():EntityManagerInterface
+    public static function getEntityManager():EntityManagerInterface
     {
-        $rootDir = __DIR__ . '/../..';
         //cria as configurações que o doctrine precisa através de anotações
         //busca apartir do directory src e com mode de desenvolvimento = true
         $config = ORMSetup::createAttributeMetadataConfiguration(
-            [$rootDir . '/src'],
+            [__DIR__ . '/..'],
             true
         );
 
