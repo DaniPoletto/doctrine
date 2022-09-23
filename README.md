@@ -41,7 +41,7 @@ Em seguida, rode o comando no terminal:
  
  Mostrar os comandos disponiveis pelo doctrine:
   ```
- vendor\bin\doctrine.bat
+ php bin/doctrine.php
  ```
  Mapear uma classe:
   ```
